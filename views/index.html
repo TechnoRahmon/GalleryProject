@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <style>
+        .parent {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows:auto; 
+            grid-column-gap: 3px;
+            grid-row-gap: 3px;
+            }
+
+           
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class=" w-100 p-4" style="background-color: rgb(96, 248, 59);">
+                <h1 class="my-3">Image Gallery</h1>
+        </div>
+        
+        <form action="/send" class="w-25 mx-auto" enctype="multipart/form-data">
+            <label for="image" class="mt-4 mb-3">choose your image (png , jpg , jpeg ,gif)</label>
+            <input class="form-control" type="file" name="image" id="image">
+            <h4 class="mt-4 mb-3">Caption</h4>
+            <input type="text" name="caption" class="form-control">
+            <input type="submit" value="upload" class="btn btn-success mt-3 mb-4">
+        </form>
+
+        <div class="my-3 py-4 px-2" style="background-color: rgb(240, 240, 240);">
+            <div class="parent">
+
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>
+
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>   
+                
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>              
+                
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>            
+                
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>             
+                
+                <div class=" ">
+                    <h5>image 1</h5>
+                    <div class="img-box">
+                        <img class="w-100" src="http://localhost:5000/images/img.jpg" alt="">
+                    </div>
+                </div>
+                
+                </div>
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+</body>
+</html>

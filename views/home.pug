@@ -1,0 +1,39 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Document
+  link(href='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css' rel='stylesheet' integrity='sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU' crossorigin='anonymous')
+  style.
+    .parent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows:auto;
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    }
+.container
+  .w-100.p-4(style='background-color: rgb(96, 248, 59);')
+    h1.my-3 Image Gallery
+  form.w-25.mx-auto(action='/send' method='POST' enctype='multipart/form-data')
+    if (error)
+        p.p-3.text-danger.bg-light #{error}
+    label.mt-4.mb-3(for='image') choose your image (png , jpg , jpeg ,gif)
+    input#image.form-control(type='file' name='image')
+    h4.mt-4.mb-3 Caption
+    input.form-control(type='text' name='caption')
+    input.btn.btn-success.mt-3.mb-4(type='submit' value='upload')
+    if (message)
+        p.p-3.text-success.bg-light #{message}
+
+  .my-3.py-4.px-2(style='background-color: rgb(240, 240, 240);')
+    .parent
+        if  data
+            each val in data
+                div
+                    h5 #{val.caption}
+                    .img-box
+                    img.w-100(src='/images/'+val.title alt='')
+
+script(src='https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js' integrity='sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ' crossorigin='anonymous')
